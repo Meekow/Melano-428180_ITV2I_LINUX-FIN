@@ -32,7 +32,7 @@ sudo chown -R prometheus:prometheus /var/lib/prometheus/
 sudo systemctl daemon-reload
 sudo systemctl start prometheus
 sudo systemctl enable prometheus
-sudo systemctl status prometheus
+
 
 #Housekeeping
 cd /

@@ -1,7 +1,15 @@
 #!/bin/bash
 
-#Install dependencies
+#Allocate execute priviledges. 
 
+sudo chmod +x build-essential
+sudo chmod +x libonig-dev
+sudo chmod +x prometheus_installer.sh
+sudo chmod +x grok-exp_install.sh
+sudo chmod +x nginx_install.sh
+sudo chmod +x go_install.sh
+
+#Install dependencies
 # Nginx installer
 sudo ./nginx_install.sh
 #Go lang installation
@@ -12,6 +20,8 @@ sudo apt-get install build-essential
 sudo apt-get install libonig-dev
 
 # Install main
+cd /tmp/prometheus
+sudo git clone https://github.com/Meekow/Melano-428180_ITV2I_LINUX-FIN.git
 #Prometheus installer
 sudo ./prometheus_installer.sh
 
