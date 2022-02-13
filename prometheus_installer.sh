@@ -16,12 +16,13 @@ cd /tmp/prometheus && sudo curl -s https://api.github.com/repos/prometheus/prome
 tar xvf prometheus-2.33.3.linux-amd64.tar.gz
 
 # Move files to appropriate location
+cd /conf/
+sudo mv prometheus.service /etc/systemd/system/prometheus.service
+sudo mv prometheus.yml  /etc/prometheus/prometheus.yml
 cd /tmp/prometheus/prometheus-2.33.3.linux-amd64
 sudo mv prometheus promtool /usr/local/bin/
 sudo mv consoles/ console_libraries/ /etc/prometheus/
-cd /conf
-sudo mv prometheus.service /etc/systemd/system/prometheus.service
-sudo mv prometheus.yml  /etc/prometheus/prometheus.yml
+
 
 #Allocate rights
 for i in rules rules.d files_sd; do sudo chown -R prometheus:prometheus /etc/prometheus/${i}; done
@@ -32,8 +33,8 @@ sudo chown -R prometheus:prometheus /var/lib/prometheus/
 sudo systemctl daemon-reload
 sudo systemctl start prometheus
 sudo systemctl enable prometheus
-
+sudo systemctl status prometheus
 
 #Housekeeping
-cd /
-sudo rm -rf /tmp/prometheus
+#cd /
+#sudo rm -rf /tmp/prometheus

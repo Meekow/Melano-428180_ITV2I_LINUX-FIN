@@ -11,11 +11,10 @@ sudo ./nginx_install.sh
 sudo chmod +x Go_install.sh
 sudo ./Go_install.sh
 #GCC installation (req for cgo)
-sudo chmod +x build-essential
-sudo apt-get install build-essential
+sudo apt-get -y install build-essential
 #Oniguruma library install (required for Grok)
 sudo chmod +x libonig-dev
-sudo apt-get install libonig-dev
+sudo apt-get -y install libonig-dev
 
 # Install main
 #Prometheus installer
