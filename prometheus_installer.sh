@@ -19,8 +19,8 @@ tar xvf prometheus-2.33.3.linux-amd64.tar.gz
 cd /tmp/prometheus/prometheus-2.33.3.linux-amd64
 sudo mv prometheus promtool /usr/local/bin/
 sudo mv consoles/ console_libraries/ /etc/prometheus/
-sudo mv prometheus.service /etc/systemd/system/prometheus.service
-sudo mv prometheus.yml  /etc/prometheus/prometheus.yml
+sudo mv conf/prometheus.service /etc/systemd/system/prometheus.service
+sudo mv conf/prometheus.yml  /etc/prometheus/prometheus.yml
 
 #Allocate rights
 for i in rules rules.d files_sd; do sudo chown -R prometheus:prometheus /etc/prometheus/${i}; done
