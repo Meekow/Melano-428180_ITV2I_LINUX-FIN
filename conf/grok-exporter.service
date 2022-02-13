@@ -1,0 +1,13 @@
+[Unit]
+Description=Prometheus grok_exporter server
+ 
+[Service]
+Restart=always
+WorkingDirectory=/opt/grok-exporter
+ExecStart=/opt/grok-exporter/grok_exporter --config=/opt/grok-exporter/config.yml
+ExecReload=/bin/kill -HUP $MAINPID
+TimeoutStopSec=20s
+SendSIGKILL=no
+
+[Install]
+WantedBy=multi-user.target
