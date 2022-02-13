@@ -16,7 +16,7 @@ cd /tmp/prometheus && sudo curl -s https://api.github.com/repos/prometheus/prome
 tar xvf prometheus-2.33.3.linux-amd64.tar.gz
 
 # Move files to appropriate location
-cd /conf/
+cd /home/MUYSM/Melano-428180_ITV2I_LINUX-FIN/conf/
 sudo mv prometheus.service /etc/systemd/system/prometheus.service
 sudo mv prometheus.yml  /etc/prometheus/prometheus.yml
 cd /tmp/prometheus/prometheus-2.33.3.linux-amd64
