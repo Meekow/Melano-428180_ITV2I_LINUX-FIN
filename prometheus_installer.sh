@@ -19,7 +19,7 @@ tar xvf prometheus-2.33.3.linux-amd64.tar.gz
 cd /tmp/prometheus/prometheus-2.33.3.linux-amd64
 sudo mv prometheus promtool /usr/local/bin/
 sudo mv consoles/ console_libraries/ /etc/prometheus/
-cd conf
+cd ~/conf
 sudo mv prometheus.service /etc/systemd/system/prometheus.service
 sudo mv prometheus.yml  /etc/prometheus/prometheus.yml
 
