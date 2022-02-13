@@ -10,8 +10,6 @@ sudo mkdir -p /tmp/prometheus/scripts_git
 for i in rules rules.d files_sd; do sudo mkdir -p /etc/prometheus/${i}; done
 
 #Gather required files
-cd /tmp/prometheus
-sudo git clone https://github.com/Meekow/Melano-428180_ITV2I_LINUX-FIN.git
 cd /tmp/prometheus && sudo curl -s https://api.github.com/repos/prometheus/prometheus/releases/latest | grep browser_download_url | grep linux-amd64 | cut -d '"' -f 4 | wget -qi -
 
 # Unpack files 
